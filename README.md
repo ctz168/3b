@@ -1,6 +1,12 @@
 # Ollama + Nanbeige4.1-3B-q4_K_M 一键部署脚本
 
-一键部署 [Ollama](https://ollama.com/) 和 [南壁鸽4.1-3B](https://ollama.com/softw8/Nanbeige4.1-3B-q4_K_M) 大语言模型，支持 Windows、Linux 和 macOS 三大平台。
+一键部署 [Ollama](https://ollama.com/) 和 [南壁鸽4.1-3B](https://ollama.com/softw8/Nanbeige4.1-3B-q4_K_M) 大语言模型，支持 Windows、Linux、macOS 三大平台以及 Google Colab 免费云端部署。
+
+> **无需本地环境？直接在 Colab 免费体验 👇**
+>
+> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ctz168/3b/blob/main/colab_deploy_and_chat.ipynb)
+>
+> 点击上方徽章，一键打开 Colab Notebook → 选择 GPU 运行时 → 按顺序运行 Cell → 开始聊天
 
 ## 模型简介
 
@@ -25,6 +31,19 @@
 > **注意**: CPU 推理速度约 3-15 tok/s（取决于 CPU 性能）。如有 NVIDIA GPU，Ollama 会自动启用 CUDA 加速。
 
 ## 快速开始
+
+### ☁️ Google Colab（推荐，免费 GPU）
+
+无需安装任何软件，直接在浏览器中部署并聊天：
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ctz168/3b/blob/main/colab_deploy_and_chat.ipynb)
+
+1. 点击上方徽章打开 Colab
+2. 菜单栏 → `代码执行程序` → `更改运行时类型` → 选择 **T4 GPU** → 保存
+3. 按顺序运行每个 Cell（安装 → 下载模型 → 速度测试 → 聊天）
+4. 在聊天 Cell 中输入消息即可对话
+
+> Colab 免费 T4 GPU 可获得 **30-80 tok/s** 的生成速度，远超 CPU 推理。
 
 ### Linux
 
@@ -142,6 +161,7 @@ print(response.json()["message"]["content"])
 ## 文件结构
 
 ```
+├── colab_deploy_and_chat.ipynb       # Google Colab 一键部署 & 聊天
 ├── scripts/
 │   ├── install_ollama_linux.sh      # Linux 部署脚本
 │   ├── install_ollama_macos.sh      # macOS 部署脚本
